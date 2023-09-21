@@ -9,10 +9,11 @@ carouselButton.addEventListener("click", function() {
     if (faIcon.classList.contains("fa-pause")) {
         faIcon.classList.remove("fa-pause");
         faIcon.classList.add("fa-play");
+        carousel.pause();
     } else {
         faIcon.classList.remove("fa-play");
         faIcon.classList.add("fa-pause");
-        carouselCycle();
+        carousel.cycle();
     }
 });
 
