@@ -3,15 +3,17 @@ const carousel = new bootstrap.Carousel("#homeCarousel", {
     interval: 2000,
     pause: false
 });
-const carouselPause = document.getElementById("carouselPause");
-carouselPause.addEventListener("click", function() {
-    console.log("Pausing the carousel");
-    carousel.pause();
-});
-const carouselPlay = document.getElementById("carouselPlay");
-carouselPlay.addEventListener("click", function() {
-    console.log("Cycling the carousel");
-    carousel.cycle();
+const carouselButton = document.getElementById("carouselButton");
+const faIcon = document.getElementById("faButton");
+carouselButton.addEventListener("click", function() {
+    if (faIcon.classList.contains("fa-pause")) {
+        faIcon.classList.remove("fa-pause");
+        faIcon.classList.add("fa-play");
+    } else {
+        faIcon.classList.remove("fa-play");
+        faIcon.classList.add("fa-pause");
+        carouselCycle();
+    }
 });
 
 //# sourceMappingURL=index.09863fc6.js.map
